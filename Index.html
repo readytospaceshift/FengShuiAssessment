@@ -1,0 +1,2112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpaceShift Feng Shui Assessment</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --bg-canvas: #0E1512;
+      --bg-surface: #141D19;
+      --bg-elevated: #1B2722;
+      --text-primary: #F2F4EF;
+      --text-secondary: #B8C4BD;
+      --accent-sage: #8FB8A3;
+      --accent-deep: #2D4A3E;
+      --border-subtle: rgba(143, 184, 163, 0.18);
+    }
+
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-primary);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    .glossary-term {
+      border-bottom: 1px dashed rgba(143, 184, 163, 0.65);
+      color: #CBE0D5;
+      cursor: pointer;
+      transition: color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .glossary-term:hover {
+      color: #FFFFFF;
+      border-bottom-color: #FFFFFF;
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(0.85); }
+    }
+
+    .saved-dot {
+      animation: pulseDot 2.2s infinite ease-in-out;
+    }
+
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+      body {
+        background: #FFFFFF !important;
+        color: #111827 !important;
+      }
+      .print-card {
+        border: 1px solid #D1D5DB !important;
+        background: #FFFFFF !important;
+        color: #111827 !important;
+        box-shadow: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen antialiased selection:bg-[#8FB8A3]/30 selection:text-white">
+  <div id="app" class="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+    <!-- Top Sticky Header -->
+    <header class="no-print sticky top-3 z-30 rounded-2xl border border-[var(--border-subtle)] bg-[#141D19]/95 backdrop-blur px-4 sm:px-6 py-4 mb-6 shadow-xl">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div class="flex items-center gap-4">
+          <!-- Perfect Lotus Design Emblem (Locked) -->
+          <div class="shrink-0 w-16 h-16 rounded-full overflow-hidden border border-[var(--border-subtle)] bg-[#141D19] shadow-md flex items-center justify-center" aria-label="Perfect Lotus Design Emblem">
+            <svg id="perfect-lotus-logo" viewBox="0 0 100 100" class="w-full h-full" role="img" aria-label="Yin Yang Lotus Emblem">
+              <defs>
+                <clipPath id="yinYangClip">
+                  <circle cx="50" cy="50" r="46" />
+                </clipPath>
+              </defs>
+              <g clip-path="url(#yinYangClip)">
+                <!-- Base Cream Right/Bottom & Dark Green Left/Top -->
+                <circle cx="50" cy="50" r="46" fill="#F2F4EF" />
+                <path d="M50 4 A46 46 0 0 0 50 96 A23 23 0 0 0 50 50 A23 23 0 0 1 50 4 Z" fill="#23372E" />
+                <!-- Top dot in dark green color matching background -->
+                <circle cx="50" cy="27" r="6.2" fill="#141D19" />
+
+                <!-- Layered Sage & Cream Lotus Blossom in Lower Section -->
+                <g transform="translate(50, 74)">
+                  <!-- Outer left & right petals -->
+                  <path d="M-4 6 C-22 6 -38 -2 -44 -14 C-31 -15 -18 -9 -4 6 Z" fill="#6F9A84" stroke="#23372E" stroke-width="1.8" stroke-linejoin="round" />
+                  <path d="M4 6 C22 6 38 -2 44 -14 C31 -15 18 -9 4 6 Z" fill="#6F9A84" stroke="#23372E" stroke-width="1.8" stroke-linejoin="round" />
+
+                  <!-- Mid-outer petals -->
+                  <path d="M-3 5 C-17 0 -29 -12 -33 -25 C-21 -22 -11 -11 -3 5 Z" fill="#8FB8A3" stroke="#23372E" stroke-width="1.8" stroke-linejoin="round" />
+                  <path d="M3 5 C17 0 29 -12 33 -25 C21 -22 11 -11 3 5 Z" fill="#8FB8A3" stroke="#23372E" stroke-width="1.8" stroke-linejoin="round" />
+
+                  <!-- Inner cream & sage petals -->
+                  <path d="M-2 4 C-11 -6 -17 -20 -18 -33 C-9 -27 -3 -13 -2 4 Z" fill="#DCE8E1" stroke="#23372E" stroke-width="1.8" stroke-linejoin="round" />
+                  <path d="M2 4 C11 -6 17 -20 18 -33 C9 -27 3 -13 2 4 Z" fill="#DCE8E1" stroke="#23372E" stroke-width="1.8" stroke-linejoin="round" />
+
+                  <!-- Center upright lotus petal -->
+                  <path d="M0 4 C-7 -10 -7 -26 0 -38 C7 -26 7 -10 0 4 Z" fill="#F2F4EF" stroke="#23372E" stroke-width="1.8" stroke-linejoin="round" />
+
+                  <!-- Bottom lotus bud/base -->
+                  <path d="M-11 5 C-6 12 6 12 11 5 C6 3 -6 3 -11 5 Z" fill="#8FB8A3" stroke="#23372E" stroke-width="1.6" stroke-linejoin="round" />
+                </g>
+              </g>
+              <circle cx="50" cy="50" r="46" fill="none" stroke="#8FB8A3" stroke-width="2" opacity="0.45" />
+            </svg>
+          </div>
+
+          <div>
+            <div class="flex flex-wrap items-center gap-2.5">
+              <h1 class="text-xl sm:text-2xl font-semibold tracking-tight text-white">SpaceShift Feng Shui Assessment</h1>
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-[#23372E] border border-[#8FB8A3]/30 px-2.5 py-0.5 text-xs font-medium text-[#CBE0D5]">
+                <span class="w-2 h-2 rounded-full bg-[#8FB8A3] saved-dot"></span>
+                Saved
+              </span>
+            </div>
+            <p class="text-xs sm:text-sm text-[var(--text-secondary)] mt-0.5">
+              Guided Walkthrough, Bagua Diagnostics, Kua Calculator &amp; Priority Cures
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2.5 self-start md:self-center">
+          <button
+            type="button"
+            onclick="openClearModal()"
+            class="inline-flex items-center gap-1.5 rounded-xl border border-rose-400/30 bg-rose-950/40 hover:bg-rose-900/50 px-3.5 py-2 text-xs sm:text-sm font-medium text-rose-200 transition cursor-pointer"
+          >
+            <span>↺</span>
+            <span>Clear All Answers</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 4 Top-Level Tabs -->
+      <nav class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 mt-4 pt-4 border-t border-[var(--border-subtle)]" aria-label="Assessment Sections">
+        <button
+          id="tab-checklist"
+          type="button"
+          onclick="switchTab('checklist')"
+          class="flex items-center justify-between rounded-xl px-3.5 py-2.5 text-left text-sm font-medium transition cursor-pointer"
+        >
+          <span>1. Walkthrough Checklist</span>
+          <span id="nav-checklist-count" class="text-xs rounded-full px-2 py-0.5 bg-black/25">0/14</span>
+        </button>
+
+        <button
+          id="tab-bagua"
+          type="button"
+          onclick="switchTab('bagua')"
+          class="flex items-center justify-between rounded-xl px-3.5 py-2.5 text-left text-sm font-medium transition cursor-pointer"
+        >
+          <span>2. Bagua Map &amp; Five Elements</span>
+          <span class="text-xs rounded-full px-2 py-0.5 bg-black/25">9 Sectors</span>
+        </button>
+
+        <button
+          id="tab-kua"
+          type="button"
+          onclick="switchTab('kua')"
+          class="flex items-center justify-between rounded-xl px-3.5 py-2.5 text-left text-sm font-medium transition cursor-pointer"
+        >
+          <span>3. Kua Number Calculator</span>
+          <span id="nav-kua-badge" class="text-xs rounded-full px-2 py-0.5 bg-black/25">Ba Zhai</span>
+        </button>
+
+        <button
+          id="tab-cures"
+          type="button"
+          onclick="switchTab('cures')"
+          class="flex items-center justify-between rounded-xl px-3.5 py-2.5 text-left text-sm font-medium transition cursor-pointer"
+        >
+          <span>4. Priority Cures &amp; Action Plan</span>
+          <span id="nav-cures-count" class="text-xs rounded-full px-2 py-0.5 bg-amber-500/20 text-amber-200">0</span>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Scope, Space Label & Progress Strip -->
+    <section class="no-print rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-4 sm:p-5 mb-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-end">
+        <div class="lg:col-span-5">
+          <label class="block text-xs font-semibold uppercase tracking-wider text-[var(--text-secondary)] mb-2">
+            1. Assessment Scope
+          </label>
+          <div class="grid grid-cols-3 gap-2">
+            <button type="button" id="scope-home" onclick="setScope('home')" class="rounded-xl px-3 py-2 text-xs sm:text-sm font-medium border transition cursor-pointer">
+              🏡 Whole Home
+            </button>
+            <button type="button" id="scope-business" onclick="setScope('business')" class="rounded-xl px-3 py-2 text-xs sm:text-sm font-medium border transition cursor-pointer">
+              🏢 Business
+            </button>
+            <button type="button" id="scope-room" onclick="setScope('room')" class="rounded-xl px-3 py-2 text-xs sm:text-sm font-medium border transition cursor-pointer">
+              🛋️ Single Room
+            </button>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4">
+          <label for="space-label-input" class="block text-xs font-semibold uppercase tracking-wider text-[var(--text-secondary)] mb-2">
+            2. Client or Space Label
+          </label>
+          <input
+            id="space-label-input"
+            type="text"
+            placeholder="e.g., Maple St. Home, Studio, or Primary Suite"
+            oninput="setSpaceLabel(this.value)"
+            class="w-full rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)] px-3.5 py-2 text-sm text-white placeholder:text-[#84968C] focus:outline-none focus:border-[#8FB8A3]"
+          />
+        </div>
+
+        <div class="lg:col-span-3">
+          <div class="flex items-center justify-between text-xs mb-1.5">
+            <span class="font-semibold uppercase tracking-wider text-[var(--text-secondary)]">Progress</span>
+            <span id="progress-summary-text" class="font-medium text-white">0 / 14 Scored</span>
+          </div>
+          <div class="w-full h-2.5 rounded-full bg-[#0E1512] overflow-hidden border border-[var(--border-subtle)]">
+            <div id="progress-bar-fill" class="h-full bg-[#8FB8A3] transition-all duration-300" style="width: 0%"></div>
+          </div>
+          <div class="flex items-center justify-between text-xs mt-1.5 text-[var(--text-secondary)]">
+            <span id="aligned-count-text">0 Aligned</span>
+            <span id="cure-count-text" class="text-amber-300 font-medium">0 Needs Cure</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3-Tier Priority Hierarchy Strip -->
+      <div class="mt-4 pt-4 border-t border-[var(--border-subtle)] grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+        <div class="rounded-xl bg-[var(--bg-elevated)]/80 border border-[var(--border-subtle)] p-3">
+          <div class="font-semibold text-[#CBE0D5]">Tier 1: Command Position &amp; Landform</div>
+          <p class="text-[var(--text-secondary)] mt-1">Primary structural &amp; flow priority—doorway sightlines, solid backing, and avoiding direct door-to-exit or Sha Qi lines.</p>
+        </div>
+        <div class="rounded-xl bg-[var(--bg-elevated)]/80 border border-[var(--border-subtle)] p-3">
+          <div class="font-semibold text-[#CBE0D5]">Tier 2: Bagua Map &amp; Five Elements</div>
+          <p class="text-[var(--text-secondary)] mt-1">Spatial zoning and elemental balance (Wood, Fire, Earth, Metal, Water) across life areas and missing/extended corners.</p>
+        </div>
+        <div class="rounded-xl bg-[var(--bg-elevated)]/80 border border-[var(--border-subtle)] p-3">
+          <div class="font-semibold text-[#CBE0D5]">Tier 3: Personal Kua &amp; Compass Directions</div>
+          <p class="text-[var(--text-secondary)] mt-1">Secondary to Command Position, yet valuable for fine-tuning bed orientation, desk facing, and tie-breaking choices.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 1: WALKTHROUGH CHECKLIST -->
+    <main id="view-checklist" class="space-y-5">
+      <div class="no-print flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-4">
+        <div id="phase-filter-buttons" class="flex flex-wrap gap-2"></div>
+        <div class="flex items-center gap-2 text-xs">
+          <button type="button" onclick="setStatusFilter('all')" id="filter-all" class="rounded-lg px-3 py-1.5 border cursor-pointer">All</button>
+          <button type="button" onclick="setStatusFilter('unscored')" id="filter-unscored" class="rounded-lg px-3 py-1.5 border cursor-pointer">Unscored</button>
+          <button type="button" onclick="setStatusFilter('cure')" id="filter-cure" class="rounded-lg px-3 py-1.5 border cursor-pointer">Needs Cure</button>
+        </div>
+      </div>
+
+      <div id="checklist-container" class="space-y-4"></div>
+    </main>
+
+    <!-- VIEW 2: BAGUA MAP & FIVE ELEMENTS -->
+    <section id="view-bagua" class="hidden space-y-6">
+      <!-- 4-Step Bagua Room Auditor -->
+      <div class="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-5 sm:p-6">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
+          <div>
+            <h2 class="text-lg sm:text-xl font-semibold text-white">Interactive 4-Step Bagua Room &amp; Space Auditor</h2>
+            <p class="text-sm text-[var(--text-secondary)]">Map a floor plan or room using the entrance wall as your bottom anchor, then log sector conditions.</p>
+          </div>
+          <span class="text-xs rounded-full bg-[#23372E] text-[#CBE0D5] px-3 py-1 border border-[#8FB8A3]/30 self-start">
+            Tier 2 Spatial Diagnostic
+          </span>
+        </div>
+        <div id="auditor-container"></div>
+      </div>
+
+      <!-- 3x3 Bagua Grid -->
+      <div class="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-5 sm:p-6">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-4">
+          <div>
+            <h2 class="text-lg sm:text-xl font-semibold text-white">Classical 3×3 Bagua Map</h2>
+            <p class="text-sm text-[var(--text-secondary)]">
+              Click any sector to inspect its life theme, dominant element, and quick cure—or apply your Kua directions on the next tab.
+            </p>
+          </div>
+          <div id="bagua-kua-banner"></div>
+        </div>
+
+        <div id="bagua-grid" class="grid grid-cols-1 sm:grid-cols-3 gap-3"></div>
+        <div id="bagua-detail-panel" class="mt-4 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)] p-4"></div>
+      </div>
+
+      <!-- Five Elements (Wu Xing) -->
+      <div class="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-5 sm:p-6">
+        <h2 class="text-lg sm:text-xl font-semibold text-white mb-1">Five Elements (Wu Xing) Cycle &amp; Balance</h2>
+        <p class="text-sm text-[var(--text-secondary)] mb-4">
+          Select an element to see how it nourishes (<span class="text-emerald-300">Productive Cycle</span>) and regulates (<span class="text-amber-300">Controlling Cycle</span>) surrounding elements.
+        </p>
+        <div id="elements-selector" class="grid grid-cols-2 sm:grid-cols-5 gap-2.5 mb-4"></div>
+        <div id="elements-detail" class="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)] p-4"></div>
+      </div>
+
+      <!-- Next Tab Callout -->
+      <div class="no-print rounded-2xl border border-[#8FB8A3]/30 bg-[#1B2722] p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <div class="text-sm font-semibold text-white">Ready for Tier 3 Personal Compass Alignment?</div>
+          <p class="text-xs sm:text-sm text-[var(--text-secondary)]">Calculate your personal Kua (*Ming Gua*) number with Solar New Year (*Li Chun*) accuracy and push your best directions into the checklist.</p>
+        </div>
+        <button
+          type="button"
+          onclick="switchTab('kua')"
+          class="shrink-0 rounded-xl bg-[#8FB8A3] hover:bg-[#A3C7B5] text-[#0E1512] font-semibold px-4 py-2.5 text-sm transition cursor-pointer"
+        >
+          Next: Kua Number Calculator →
+        </button>
+      </div>
+    </section>
+
+    <!-- VIEW 3: KUA NUMBER CALCULATOR -->
+    <section id="view-kua" class="hidden space-y-6">
+      <div class="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-5 sm:p-6">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
+          <div>
+            <h2 class="text-lg sm:text-xl font-semibold text-white">Personal Kua Number (Ming Gua) Calculator</h2>
+            <p class="text-sm text-[var(--text-secondary)]">
+              Eight Mansions (*Ba Zhai*) directional profile adjusted for the Chinese Solar New Year (*Li Chun* — Feb 4) and Kua 5 substitution rules.
+            </p>
+          </div>
+          <span class="text-xs rounded-full bg-[#23372E] text-[#CBE0D5] px-3 py-1 border border-[#8FB8A3]/30 self-start">
+            Tier 3 Compass Tie-Breaker
+          </span>
+        </div>
+
+        <div class="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)] p-4 text-xs sm:text-sm text-[var(--text-secondary)]">
+          <strong class="text-white">Why It Matters &amp; How Important It Is:</strong> Command Position and room flow always come first (Tier 1 &amp; Tier 2), while your Kua number helps fine-tune bed orientation, desk facing direction, and tie-breakers between two otherwise balanced options.
+        </div>
+      </div>
+
+      <!-- Two-Column Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <!-- Left Column: Inputs (Static while typing so cursor never jumps) -->
+        <div class="lg:col-span-4 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-5 space-y-4">
+          <h3 class="text-base font-semibold text-white">Birth Details</h3>
+
+          <div>
+            <label for="kua-birth-year" class="block text-xs font-semibold uppercase tracking-wider text-[var(--text-secondary)] mb-1.5">
+              Birth Year (YYYY, 1900–2099)
+            </label>
+            <input
+              id="kua-birth-year"
+              type="text"
+              inputmode="numeric"
+              maxlength="4"
+              placeholder="e.g., 1984"
+              oninput="handleKuaBirthYearInput(this.value)"
+              class="w-full rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)] px-3.5 py-2.5 text-sm text-white placeholder:text-[#84968C] focus:outline-none focus:border-[#8FB8A3]"
+            />
+          </div>
+
+          <div>
+            <span class="block text-xs font-semibold uppercase tracking-wider text-[var(--text-secondary)] mb-1.5">
+              Ba Zhai Formula Gender
+            </span>
+            <div id="kua-gender-group" class="grid grid-cols-2 gap-2">
+              <button
+                type="button"
+                id="kua-gender-male"
+                onclick="setKuaGender('male')"
+                class="rounded-xl px-3 py-2 text-sm font-medium border transition cursor-pointer"
+              >
+                Male
+              </button>
+              <button
+                type="button"
+                id="kua-gender-female"
+                onclick="setKuaGender('female')"
+                class="rounded-xl px-3 py-2 text-sm font-medium border transition cursor-pointer"
+              >
+                Female
+              </button>
+            </div>
+          </div>
+
+          <div class="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)] p-3.5">
+            <label class="flex items-start gap-2.5 cursor-pointer">
+              <input
+                id="kua-born-before-lichun"
+                type="checkbox"
+                onchange="setKuaBeforeLiChun(this.checked)"
+                class="mt-1 h-4 w-4 rounded border-[#8FB8A3] accent-[#8FB8A3]"
+              />
+              <span class="text-xs text-[var(--text-secondary)] leading-relaxed">
+                <strong class="text-white">Born before Feb 4 (Li Chun):</strong> Check this if born in January or on Feb 1–3, so the calculator uses the prior solar year.
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Right Column: Calculated Profile & Directions -->
+        <div id="kuaResultContainer" class="lg:col-span-8 space-y-5"></div>
+      </div>
+
+      <!-- Next Tab Callout -->
+      <div class="no-print rounded-2xl border border-[#8FB8A3]/30 bg-[#1B2722] p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <div class="text-sm font-semibold text-white">Review Your Actionable Remedies</div>
+          <p class="text-xs sm:text-sm text-[var(--text-secondary)]">See all items marked <span class="text-amber-300 font-medium">Needs Cure</span> plus any personal Kua cures added to your plan.</p>
+        </div>
+        <button
+          type="button"
+          onclick="switchTab('cures')"
+          class="shrink-0 rounded-xl bg-[#8FB8A3] hover:bg-[#A3C7B5] text-[#0E1512] font-semibold px-4 py-2.5 text-sm transition cursor-pointer"
+        >
+          View Priority Cures &amp; Action Plan →
+        </button>
+      </div>
+    </section>
+
+    <!-- VIEW 4: PRIORITY CURES & ACTION PLAN -->
+    <section id="view-cures" class="space-y-5">
+      <div class="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-5 sm:p-6">
+        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+          <div>
+            <h2 class="text-lg sm:text-xl font-semibold text-white">Priority Cures &amp; Action Plan</h2>
+            <p class="text-sm text-[var(--text-secondary)] mt-0.5">
+              Prioritized cures from flagged checklist items and custom Kua adjustments. Copy a summary or print for on-site walkthroughs.
+            </p>
+          </div>
+          <div class="no-print flex flex-wrap items-center gap-2">
+            <button
+              type="button"
+              onclick="copyActionPlan()"
+              class="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)] hover:bg-[#24342D] px-3.5 py-2 text-xs sm:text-sm font-medium text-white transition cursor-pointer"
+            >
+              📋 Copy Action Plan
+            </button>
+            <button
+              type="button"
+              onclick="window.print()"
+              class="rounded-xl bg-[#8FB8A3] hover:bg-[#A3C7B5] text-[#0E1512] px-3.5 py-2 text-xs sm:text-sm font-semibold transition cursor-pointer"
+            >
+              🖨️ Print / Save PDF
+            </button>
+          </div>
+        </div>
+        <div id="copy-feedback" class="hidden mt-3 text-xs text-emerald-300 font-medium"></div>
+      </div>
+
+      <div id="cures-container" class="space-y-4"></div>
+    </section>
+  </div>
+
+  <!-- Glossary Modal -->
+  <div id="glossary-modal" class="hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-xs flex items-center justify-center p-4" onclick="closeGlossary(event)">
+    <div class="max-w-md w-full rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-5 shadow-2xl" onclick="event.stopPropagation()">
+      <div class="flex items-start justify-between gap-3">
+        <h3 id="glossary-title" class="text-lg font-semibold text-white"></h3>
+        <button type="button" onclick="closeGlossary()" class="text-[var(--text-secondary)] hover:text-white text-lg leading-none cursor-pointer">✕</button>
+      </div>
+      <p id="glossary-body" class="text-sm text-[var(--text-secondary)] mt-3 leading-relaxed"></p>
+      <div class="mt-4 flex justify-end">
+        <button type="button" onclick="closeGlossary()" class="rounded-xl bg-[#8FB8A3] text-[#0E1512] font-semibold px-4 py-2 text-xs sm:text-sm cursor-pointer">
+          Got It
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Clear All Answers Modal -->
+  <div id="clear-modal" class="hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-xs flex items-center justify-center p-4" onclick="closeClearModal(event)">
+    <div class="max-w-md w-full rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-5 shadow-2xl" onclick="event.stopPropagation()">
+      <h3 class="text-lg font-semibold text-white">Clear All Saved Answers?</h3>
+      <p class="text-sm text-[var(--text-secondary)] mt-2 leading-relaxed">
+        This resets your checklist scores, space label, Bagua auditor notes, Kua inputs, and custom cures back to defaults.
+      </p>
+      <div class="mt-5 flex items-center justify-end gap-2.5">
+        <button type="button" onclick="closeClearModal()" class="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)] px-4 py-2 text-xs sm:text-sm font-medium text-white cursor-pointer">
+          Cancel
+        </button>
+        <button type="button" onclick="confirmClearAll()" class="rounded-xl bg-rose-600 hover:bg-rose-500 px-4 py-2 text-xs sm:text-sm font-semibold text-white cursor-pointer">
+          Yes, Clear All
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    "use strict";
+
+    const STORAGE_KEY = "spaceshift_feng_shui_assessment_v1";
+
+    const GLOSSARY = {
+      shaQi: {
+        title: "Sha Qi (Rushing / Cutting Energy)",
+        body: "Fast, sharp, or overly direct energy—such as a straight road aimed at an entrance, exposed overhead beams, or sharp building corners—that can feel jarring or destabilizing."
+      },
+      commandPosition: {
+        title: "Command Position",
+        body: "The primary placement for a bed, desk, or stove where you can see the room's entrance without sitting directly in the straight line of fire from the door or with your back exposed."
+      },
+      brightHall: {
+        title: "Ming Tang (Bright Hall)",
+        body: "An open, uncluttered, and welcoming landing zone just inside or outside a main entrance where incoming Qi can gather and settle before flowing deeper into the space."
+      },
+      kuaNumber: {
+        title: "Kua Number (Ming Gua)",
+        body: "A personal compass profile derived from birth year (adjusted for Solar New Year / Li Chun on Feb 4) and gender under Ba Zhai, grouping people into East or West directional sets."
+      },
+      wuXing: {
+        title: "Wu Xing (Five Elements)",
+        body: "Wood, Fire, Earth, Metal, and Water—five dynamic qualities used to balance colors, shapes, materials, and room energy."
+      }
+    };
+
+    const PHASE_META = {
+      1: { title: "Phase 1: Exterior & Landform", subtitle: "Macro approaches, sightlines, and perimeter support" },
+      2: { title: "Phase 2: Front Door & Entryway", subtitle: "Mouth of Qi, Ming Tang arrival, and door alignments" },
+      3: { title: "Phase 3: Core Anchor Rooms", subtitle: "Bed, desk, and stove placement plus element balance" },
+      4: { title: "Phase 4: Secondary & Flow Zones", subtitle: "Living areas, baths, halls, and storage flow" },
+      5: { title: "Phase 5: Bagua & Elemental Tune-Up", subtitle: "Sector balance, light, air, and intentional imagery" }
+    };
+
+    const CHECKLIST_ITEMS = [
+      {
+        id: "p1-approach",
+        phase: 1,
+        scopes: ["home", "business"],
+        tier: "Tier 1",
+        title: "Approach Sightlines & Sha Qi Check",
+        prompt: "Is the approach free of straight-on road/driveway 'arrows' or sharp corners aimed directly at the entrance?",
+        whyItMatters: "Direct straight-line approaches push fast, aggressive energy straight at the threshold. Softening or curving the approach helps Qi arrive steadily rather than rushing past.",
+        cure: "Use curved garden beds, low shrubs, or warm entry lighting to slow and soften incoming sightlines.",
+        directionalType: null,
+        glossaryKey: "shaQi"
+      },
+      {
+        id: "p1-backing",
+        phase: 1,
+        scopes: ["home", "business"],
+        tier: "Tier 1",
+        title: "Rear Support & Front Openness",
+        prompt: "Does the property have steady backing behind it and an uncluttered, welcoming view in front?",
+        whyItMatters: "Visual and physical backing supports stability and follow-through, while an open front creates room for growth and visibility.",
+        cure: "Reinforce perimeter landscaping, fencing, or rear yard structure and clear visual bottlenecks out front.",
+        directionalType: null,
+        glossaryKey: null
+      },
+      {
+        id: "p2-door",
+        phase: 2,
+        scopes: ["home", "business", "room"],
+        tier: "Tier 1 / Tier 3",
+        title: "Main Entrance / Entry Door Function & Facing",
+        prompt: "Does the main entry open smoothly at least 90° with clear lighting, visible address/suite signage, and good orientation?",
+        whyItMatters: "The main entrance acts as the primary intake for Qi and opportunity. Stickiness, clutter, or dim lighting restricts movement from the very first step.",
+        cure: "Oil hinges, clear door-swing obstructions, upgrade entry lighting, and keep signage crisp and legible.",
+        directionalType: "door",
+        glossaryKey: "kuaNumber"
+      },
+      {
+        id: "p2-mingtang",
+        phase: 2,
+        scopes: ["home", "business", "room"],
+        tier: "Tier 1",
+        title: "Bright Hall (Ming Tang) Landing Space",
+        prompt: "Is there an open, calm landing area just inside the entrance free of shoe piles, mail stacks, or boxes?",
+        whyItMatters: "A clear landing zone lets incoming energy settle and orient instead of bottlenecking immediately at the door.",
+        cure: "Add closed shoe storage, a dedicated drop tray, and an inviting mat or warm focal point.",
+        directionalType: null,
+        glossaryKey: "brightHall"
+      },
+      {
+        id: "p2-alignment",
+        phase: 2,
+        scopes: ["home", "business"],
+        tier: "Tier 1",
+        title: "Door-to-Back-Exit or Mirror Alignment",
+        prompt: "Avoids a straight shot from the front door straight out a back door/window or directly into a mirror facing the door?",
+        whyItMatters: "Straight-through alignments let Qi exit before circulating; a mirror straight opposite the entrance can bounce incoming energy right back out.",
+        cure: "Place a mid-height table, plant, rug runner, or angled artwork to guide movement gently around the room.",
+        directionalType: null,
+        glossaryKey: null
+      },
+      {
+        id: "p3-bed",
+        phase: 3,
+        scopes: ["home", "room"],
+        tier: "Tier 1 / Tier 3",
+        title: "Bed Command Position & Headboard Direction",
+        prompt: "Is the bed in Command Position with a solid headboard against a solid wall, clear of overhead beams, and aligned with a supportive direction?",
+        whyItMatters: "You spend roughly a third of your life resting; feeling secure toward the doorway and supported at the head encourages deeper recovery.",
+        cure: "Anchor the headboard to a solid wall, move items out from under the bed, and orient toward a supportive Kua direction when layout allows.",
+        directionalType: "bed",
+        glossaryKey: "commandPosition"
+      },
+      {
+        id: "p3-desk",
+        phase: 3,
+        scopes: ["home", "business", "room"],
+        tier: "Tier 1 / Tier 3",
+        title: "Primary Desk Command Position & Facing",
+        prompt: "Can you see the room entrance from your desk with solid backing behind you, and does your facing direction support focus?",
+        whyItMatters: "Sitting with your back to the door keeps your nervous system half-on-guard, draining focus during focused work.",
+        cure: "Angle the desk into Command Position, tidy visible cables, and face a supportive Kua direction when practical.",
+        directionalType: "desk",
+        glossaryKey: "commandPosition"
+      },
+      {
+        id: "p3-stove",
+        phase: 3,
+        scopes: ["home", "room"],
+        tier: "Tier 1 / Tier 3",
+        title: "Stove Command Sightline & Fire/Water Balance",
+        prompt: "Do all burners work cleanly, avoid sitting directly next to/across from sink or fridge without a buffer, and maintain awareness of the room entry?",
+        whyItMatters: "Stoves represent nourishment and active transformation; clashing Fire and Water right beside each other can feel tense.",
+        cure: "Place a wood cutting board, potted herb, or green accent between sink/fridge and stove, and use a reflective backsplash if needed.",
+        directionalType: "stove",
+        glossaryKey: "wuXing"
+      },
+      {
+        id: "p4-seating",
+        phase: 4,
+        scopes: ["home", "business", "room"],
+        tier: "Tier 2",
+        title: "Gathering / Living Seating Flow",
+        prompt: "Is primary seating anchored cleanly without blocking walkways or turning backs awkwardly to natural conversation?",
+        whyItMatters: "Comfortable, open seating flow makes gathering effortless and keeps rooms feeling welcoming rather than cramped.",
+        cure: "Pull oversized sofas slightly off walls if needed, open clear pathways, and group seating for easy eye contact.",
+        directionalType: null,
+        glossaryKey: null
+      },
+      {
+        id: "p4-baths",
+        phase: 4,
+        scopes: ["home", "business"],
+        tier: "Tier 2",
+        title: "Bathrooms & Plumbing Containment",
+        prompt: "Are toilet lids kept down, bathroom doors closed, drains covered when not in use, and leaks fixed?",
+        whyItMatters: "Plumbing moves water and drainage continuously; keeping lids/doors closed and fixing drips prevents a subtle feeling of drain.",
+        cure: "Repair drips promptly, keep lids closed, and add fresh greenery, clean towels, or soft lighting.",
+        directionalType: null,
+        glossaryKey: null
+      },
+      {
+        id: "p4-flow",
+        phase: 4,
+        scopes: ["home", "business", "room"],
+        tier: "Tier 2",
+        title: "Hallways, Stairs & Storage Breathing Room",
+        prompt: "Are corridors, stairs, and closets/storage zones clear of bottlenecks with at least ~20% breathing room?",
+        whyItMatters: "Overstuffed storage or narrow rush-lanes slow down or whip energy around, making decisions and tidy habits harder.",
+        cure: "Declutter high-friction bins, add a runner or wall art in long halls, and create breathing room on shelves.",
+        directionalType: null,
+        glossaryKey: null
+      },
+      {
+        id: "p5-bagua",
+        phase: 5,
+        scopes: ["home", "business", "room"],
+        tier: "Tier 2",
+        title: "Bagua Sector Mapping & Missing Corners",
+        prompt: "Have you mapped the 9 Bagua sectors against your main entrance wall and noted any missing or extended areas?",
+        whyItMatters: "Seeing which life areas sit in tucked-away or over-crowded spots helps target changes where they actually count.",
+        cure: "Use lighting, color, or intentional objects in key sectors rather than cluttering every corner at once.",
+        directionalType: null,
+        glossaryKey: null
+      },
+      {
+        id: "p5-elements",
+        phase: 5,
+        scopes: ["home", "business", "room"],
+        tier: "Tier 2",
+        title: "Five Elements (Wu Xing) Balance",
+        prompt: "Does the room feel balanced across Wood, Fire, Earth, Metal, and Water rather than stuck in one heavy material or palette?",
+        whyItMatters: "Balanced elements keep a room adaptable—grounded without feeling heavy, and lively without feeling chaotic.",
+        cure: "Introduce a missing element through textiles, ceramics, plants, lighting, or metallic accents.",
+        directionalType: null,
+        glossaryKey: "wuXing"
+      },
+      {
+        id: "p5-light-air",
+        phase: 5,
+        scopes: ["home", "business", "room"],
+        tier: "Tier 2",
+        title: "Fresh Air, Light & Intentional Art",
+        prompt: "Do windows open for fresh air, bulbs work consistently, and visible art/decor match the mood you want to cultivate?",
+        whyItMatters: "Stale air, burnt-out bulbs, and distracting or heavy imagery quietly drag down how a room feels every day.",
+        cure: "Air out the space, replace dead bulbs with warm/consistent light, and curate uplifting imagery.",
+        directionalType: null,
+        glossaryKey: null
+      }
+    ];
+
+    const BAGUA_SECTORS = [
+      { id: "wealth", row: 0, col: 0, name: "Wealth & Prosperity", compass: "Southeast", element: "Wood", color: "Deep greens, purples, plants, vertical lines", theme: "Abundance, self-worth, and steady momentum", cure: "Add healthy leafy greenery or wood accents and remove broken/dead plants." },
+      { id: "fame", row: 0, col: 1, name: "Fame & Reputation", compass: "South", element: "Fire", color: "Reds, warm corals, candles, upward triangles", theme: "Visibility, recognition, and authentic expression", cure: "Use warm lighting or an uplifting focal piece; avoid cluttering with old papers." },
+      { id: "love", row: 0, col: 2, name: "Love & Relationships", compass: "Southwest", element: "Earth", color: "Blush, terracotta, warm earth tones, pairs", theme: "Partnership, self-love, and receptive warmth", cure: "Favor balanced pairs and cozy textures; clear single/solitary clutter if shifting." },
+      { id: "family", row: 1, col: 0, name: "Family & New Beginnings", compass: "East", element: "Wood", color: "Fresh greens, bamboo/wood, upward growth", theme: "Roots, community, and starting fresh projects", cure: "Bring in natural wood or living plants and keep pathways clear." },
+      { id: "health", row: 1, col: 1, name: "Health & Center (Tai Qi)", compass: "Center", element: "Earth", color: "Warm ochre, sand, soft neutrals, squares", theme: "Core balance, grounding, and whole-space harmony", cure: "Keep the center open and uncluttered so energy can circulate smoothly." },
+      { id: "children", row: 1, col: 2, name: "Children & Creativity", compass: "West", element: "Metal", color: "Crisp whites, metallics, brass, round forms", theme: "Play, creative output, joy, and next-gen projects", cure: "Add rounded or metallic accents and protect space for creative play." },
+      { id: "knowledge", row: 2, col: 0, name: "Knowledge & Self-Cultivation", compass: "Northeast", element: "Earth", color: "Earth tones, slate, stone, ceramic textures", theme: "Study, reflection, wisdom, and quiet clarity", cure: "Keep study/reading spots calm and organized with grounding textures." },
+      { id: "career", row: 2, col: 1, name: "Career & Life Path", compass: "North", element: "Water", color: "Deep blues, charcoal/black, wavy forms, glass", theme: "Direction, flow, depth, and career movement", cure: "Encourage smooth circulation and clear sightlines along the entrance axis." },
+      { id: "helpful", row: 2, col: 2, name: "Helpful People & Travel", compass: "Northwest", element: "Metal", color: "White, silver, grey, metallic hardware", theme: "Mentors, allies, support network, and travel", cure: "Display meaningful travel mementos or supportive contacts/reminders cleanly." }
+    ];
+
+    const FIVE_ELEMENTS = {
+      Wood: {
+        element: "Wood",
+        icon: "🌿",
+        produces: "Fire",
+        controls: "Earth",
+        producedBy: "Water",
+        controlledBy: "Metal",
+        summary: "Growth, flexibility, upward movement, and new beginnings.",
+        cues: "Plants, wooden furniture, vertical stripes, greens and teals."
+      },
+      Fire: {
+        element: "Fire",
+        icon: "🕯️",
+        produces: "Earth",
+        controls: "Metal",
+        producedBy: "Wood",
+        controlledBy: "Water",
+        summary: "Warmth, visibility, inspiration, and high-energy expression.",
+        cues: "Lamps, candles, sunlight, warm reds/corals, triangular accents."
+      },
+      Earth: {
+        element: "Earth",
+        icon: "🏺",
+        produces: "Metal",
+        controls: "Water",
+        producedBy: "Fire",
+        controlledBy: "Wood",
+        summary: "Stability, centering, nourishment, and reliable footing.",
+        cues: "Clay/ceramics, stone, rugs, sandy/ochre/terracotta tones, low squares."
+      },
+      Metal: {
+        element: "Metal",
+        icon: "⚪",
+        produces: "Water",
+        controls: "Wood",
+        producedBy: "Earth",
+        controlledBy: "Fire",
+        summary: "Clarity, precision, boundaries, and completion.",
+        cues: "Brass, steel, crisp white, circular or arched shapes."
+      },
+      Water: {
+        element: "Water",
+        icon: "🌊",
+        produces: "Wood",
+        controls: "Fire",
+        producedBy: "Metal",
+        controlledBy: "Earth",
+        summary: "Flow, wisdom, adaptability, and quiet rest.",
+        cues: "Glass, mirrors, flowing visuals, deep navy/charcoal/black, undulating lines."
+      }
+    };
+
+    const KUA_PROFILES = {
+      1: {
+        kua: 1,
+        group: "East Group",
+        element: "Water",
+        supportive: [
+          { code: "Sheng Qi", dir: "Southeast", meaning: "Career momentum, vitality & opportunity", remedy: "Face or sleep toward Southeast for active growth; add a subtle wood or balanced element accent." },
+          { code: "Tian Yi", dir: "East", meaning: "Restorative health & steady recovery", remedy: "Ideal headboard or rest direction when you want calm, healing energy." },
+          { code: "Yan Nian", dir: "South", meaning: "Relationships, warmth & social harmony", remedy: "Supportive for shared spaces, connection, and collaborative work." },
+          { code: "Fu Wei", dir: "North", meaning: "Personal grounding, focus & inner stability", remedy: "Great for solo focus, reflection, and steady daily routines." }
+        ],
+        challenging: [
+          { code: "Huo Hai", dir: "West", meaning: "Minor friction, distractions or low-grade annoyance", remedy: "Avoid prolonged desk/bed alignment here if possible; keep clutter low and use grounding Earth/Metal balance." },
+          { code: "Liu Sha", dir: "Northeast", meaning: "Scattered focus, indecisiveness or mixed signals", remedy: "Keep this zone tidy and purposeful rather than letting piles accumulate." },
+          { code: "Wu Gui", dir: "Southwest", meaning: "Unease, overthinking or small disruptions", remedy: "Use calm lighting and clear boundaries; lean on Command Position first." },
+          { code: "Jue Ming", dir: "Northwest", meaning: "Draining or taxing energy if overexposed", remedy: "Treat as a low-priority orientation for long stretches of rest or work." }
+        ]
+      },
+      2: {
+        kua: 2,
+        group: "West Group",
+        element: "Earth",
+        supportive: [
+          { code: "Sheng Qi", dir: "Northeast", meaning: "Growth, drive & forward traction", remedy: "Strong direction for goal-oriented work or active study when Command Position is met." },
+          { code: "Tian Yi", dir: "West", meaning: "Health support, steadiness & care", remedy: "Helpful orientation for recovery, rest, and gentle nourishment." },
+          { code: "Yan Nian", dir: "Northwest", meaning: "Harmony, partnership & mutual support", remedy: "Supports lasting rapport in relationships and team spaces." },
+          { code: "Fu Wei", dir: "Southwest", meaning: "Centering, calm & personal balance", remedy: "Reinforces grounded self-reliance and a settled rhythm." }
+        ],
+        challenging: [
+          { code: "Huo Hai", dir: "North", meaning: "Minor friction or small setbacks", remedy: "Keep this area orderly and avoid rushing decisions here." },
+          { code: "Liu Sha", dir: "Southeast", meaning: "Scattered energy or divided attention", remedy: "Simplify visual noise and keep only intentional items in view." },
+          { code: "Wu Gui", dir: "East", meaning: "Restlessness or minor tension", remedy: "Use calm, steady lighting and prioritize solid room flow." },
+          { code: "Jue Ming", dir: "South", meaning: "Heavy drain if used as a primary long-term anchor", remedy: "Prefer supportive West-group directions for beds and primary desks." }
+        ]
+      },
+      3: {
+        kua: 3,
+        group: "East Group",
+        element: "Wood",
+        supportive: [
+          { code: "Sheng Qi", dir: "South", meaning: "Momentum, visibility & creative spark", remedy: "Great for active projects, presentations, and forward movement." },
+          { code: "Tian Yi", dir: "North", meaning: "Restorative calm & health recovery", remedy: "Supportive for restful sleep and recharging energy." },
+          { code: "Yan Nian", dir: "Southeast", meaning: "Warmth, connection & cooperative flow", remedy: "Encourages harmonious interactions and shared momentum." },
+          { code: "Fu Wei", dir: "East", meaning: "Personal alignment, clarity & growth", remedy: "A natural home base for focused work and personal routines." }
+        ],
+        challenging: [
+          { code: "Huo Hai", dir: "Southwest", meaning: "Minor friction or miscommunication", remedy: "Keep communication clear and avoid clutter buildup in this orientation." },
+          { code: "Liu Sha", dir: "Northwest", meaning: "Scattered focus or second-guessing", remedy: "Streamline tasks and keep your workspace clean." },
+          { code: "Wu Gui", dir: "West", meaning: "Irritability or small snags", remedy: "Use soothing colors and take a pause before reacting." },
+          { code: "Jue Ming", dir: "Northeast", meaning: "Depleting orientation for prolonged focus", remedy: "Choose a supportive East-group direction for long daily blocks." }
+        ]
+      },
+      4: {
+        kua: 4,
+        group: "East Group",
+        element: "Wood",
+        supportive: [
+          { code: "Sheng Qi", dir: "North", meaning: "Career flow, insight & forward progress", remedy: "Strong direction for planning, research, and steady advancement." },
+          { code: "Tian Yi", dir: "South", meaning: "Vitality, warmth & rejuvenation", remedy: "Helpful for uplifting energy and daytime momentum." },
+          { code: "Yan Nian", dir: "East", meaning: "Harmony, growth & supportive ties", remedy: "Encourages healthy collaboration and steady connection." },
+          { code: "Fu Wei", dir: "Southeast", meaning: "Grounding, abundance mindset & focus", remedy: "Great for building consistent habits and creative projects." }
+        ],
+        challenging: [
+          { code: "Huo Hai", dir: "Northwest", meaning: "Minor friction or distraction", remedy: "Keep surfaces tidy and avoid over-scheduling in this alignment." },
+          { code: "Liu Sha", dir: "Southwest", meaning: "Scattered attention or indecisiveness", remedy: "Clarify your single top priority before starting." },
+          { code: "Wu Gui", dir: "Northeast", meaning: "Restlessness or small disruptions", remedy: "Maintain calm lighting and uncluttered sightlines." },
+          { code: "Jue Ming", dir: "West", meaning: "Draining direction for extended stays", remedy: "Favor North, South, East, or Southeast for key seating/sleeping." }
+        ]
+      },
+      6: {
+        kua: 6,
+        group: "West Group",
+        element: "Metal",
+        supportive: [
+          { code: "Sheng Qi", dir: "West", meaning: "Drive, structure & opportunity", remedy: "Strong for focused execution, leadership, and clear structure." },
+          { code: "Tian Yi", dir: "Northeast", meaning: "Supportive recovery & steadiness", remedy: "Helpful for calm restoration and steady footing." },
+          { code: "Yan Nian", dir: "Southwest", meaning: "Harmony, loyalty & partnership", remedy: "Supports balanced relationships and cooperative teamwork." },
+          { code: "Fu Wei", dir: "Northwest", meaning: "Authority, clarity & personal anchor", remedy: "Reinforces self-trust, order, and composed decision-making." }
+        ],
+        challenging: [
+          { code: "Huo Hai", dir: "Southeast", meaning: "Minor friction or small delays", remedy: "Keep pathways open and avoid letting minor snags snowball." },
+          { code: "Liu Sha", dir: "North", meaning: "Scattered focus or mixed direction", remedy: "Keep your workspace simple and free of excess visual clutter." },
+          { code: "Wu Gui", dir: "South", meaning: "Tension or over-intensity", remedy: "Soften harsh lighting and keep transitions calm." },
+          { code: "Jue Ming", dir: "East", meaning: "Taxing direction for long periods", remedy: "Lean on West, Northeast, Southwest, or Northwest when possible." }
+        ]
+      },
+      7: {
+        kua: 7,
+        group: "West Group",
+        element: "Metal",
+        supportive: [
+          { code: "Sheng Qi", dir: "Northwest", meaning: "Mentorship, support & forward traction", remedy: "Great for networking, guidance, and decisive action." },
+          { code: "Tian Yi", dir: "Southwest", meaning: "Nurturing calm & recovery", remedy: "Supportive for rest, comfort, and steady pacing." },
+          { code: "Yan Nian", dir: "Northeast", meaning: "Harmony, rapport & shared goals", remedy: "Encourages pleasant exchange and mutual respect." },
+          { code: "Fu Wei", dir: "West", meaning: "Creative focus, joy & self-expression", remedy: "A supportive orientation for creative output and daily flow." }
+        ],
+        challenging: [
+          { code: "Huo Hai", dir: "East", meaning: "Minor friction or restlessness", remedy: "Keep this area organized and avoid rushing." },
+          { code: "Liu Sha", dir: "South", meaning: "Scattered attention or distraction", remedy: "Reduce background noise and keep your main task clear." },
+          { code: "Wu Gui", dir: "North", meaning: "Small obstacles or unease", remedy: "Rely on solid room layout and calm, steady routines." },
+          { code: "Jue Ming", dir: "Southeast", meaning: "Draining orientation over long stretches", remedy: "Prefer Northwest, Southwest, Northeast, or West for main anchors." }
+        ]
+      },
+      8: {
+        kua: 8,
+        group: "West Group",
+        element: "Earth",
+        supportive: [
+          { code: "Sheng Qi", dir: "Southwest", meaning: "Steadiness, warmth & growth", remedy: "Strong for grounded progress, care, and lasting value." },
+          { code: "Tian Yi", dir: "Northwest", meaning: "Helpful support & restorative balance", remedy: "Great for calm recovery and reliable backup." },
+          { code: "Yan Nian", dir: "West", meaning: "Harmony, enjoyment & connection", remedy: "Supports pleasant interaction and creative ease." },
+          { code: "Fu Wei", dir: "Northeast", meaning: "Inner clarity, study & grounding", remedy: "Ideal for focused learning, planning, and quiet stability." }
+        ],
+        challenging: [
+          { code: "Huo Hai", dir: "South", meaning: "Minor friction or heat/tension", remedy: "Keep spaces cool, calm, and uncluttered." },
+          { code: "Liu Sha", dir: "East", meaning: "Scattered focus or hurried energy", remedy: "Slow down transitions and keep only essentials on hand." },
+          { code: "Wu Gui", dir: "Southeast", meaning: "Small snags or overthinking", remedy: "Keep notes organized and return to your primary task." },
+          { code: "Jue Ming", dir: "North", meaning: "Heavy drain if overused for long stays", remedy: "Favor Southwest, Northwest, West, or Northeast when adjusting orientation." }
+        ]
+      },
+      9: {
+        kua: 9,
+        group: "East Group",
+        element: "Fire",
+        supportive: [
+          { code: "Sheng Qi", dir: "East", meaning: "Fresh starts, growth & vitality", remedy: "Great for launching projects, mornings, and active growth." },
+          { code: "Tian Yi", dir: "Southeast", meaning: "Abundant support & steady recovery", remedy: "Helpful for restoring energy and smooth progress." },
+          { code: "Yan Nian", dir: "North", meaning: "Depth, connection & calm rapport", remedy: "Supports thoughtful conversation and steady focus." },
+          { code: "Fu Wei", dir: "South", meaning: "Visibility, warmth & personal confidence", remedy: "A natural alignment for expressive work and calm presence." }
+        ],
+        challenging: [
+          { code: "Huo Hai", dir: "Northeast", meaning: "Minor friction or scattered thoughts", remedy: "Keep study/work spots clear and pace your schedule." },
+          { code: "Liu Sha", dir: "West", meaning: "Distraction or minor tension", remedy: "Minimize clutter and keep visual lines clean." },
+          { code: "Wu Gui", dir: "Northwest", meaning: "Restlessness or small delays", remedy: "Use steady lighting and prioritize Command Position first." },
+          { code: "Jue Ming", dir: "Southwest", meaning: "Draining orientation for extended stays", remedy: "Lean on East, Southeast, North, or South for main anchors." }
+        ]
+      }
+    };
+
+    const AUDITOR_SECTORS = [
+      "Wealth / Southeast",
+      "Fame / South",
+      "Love / Southwest",
+      "Family / East",
+      "Center / Health",
+      "Children / West",
+      "Knowledge / Northeast",
+      "Career / North",
+      "Helpful People / Northwest"
+    ];
+
+    const AUDITOR_ROOM_TYPES = [
+      "Bedroom",
+      "Living / Gathering",
+      "Kitchen / Dining",
+      "Office / Studio",
+      "Entry / Hallway",
+      "Bath / Utility"
+    ];
+
+    const AUDITOR_CLUES = [
+      "Clutter or piles",
+      "Dim or uneven lighting",
+      "Blocked / tight flow",
+      "Drafty or noisy",
+      "Strong natural light",
+      "Calm & well-kept"
+    ];
+
+    function createDefaultState() {
+      return {
+        activeTab: "checklist",
+        scope: "home",
+        spaceLabel: "",
+        phaseFilter: "all",
+        statusFilter: "all",
+        scores: {},
+        notes: {},
+        customCures: [],
+        auditor: {
+          step: 1,
+          entranceWall: "Bottom (South / Front)",
+          sector: "Wealth / Southeast",
+          roomType: "Bedroom",
+          clues: ["Calm & well-kept"],
+          note: ""
+        },
+        selectedBaguaId: "wealth",
+        selectedElement: "Wood",
+        kua: {
+          birthYear: "1984",
+          gender: "female",
+          bornBeforeLiChun: false
+        },
+        kuaApplied: false
+      };
+    }
+
+    let state = loadState();
+
+    function loadState() {
+      const fallback = createDefaultState();
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return fallback;
+        const parsed = JSON.parse(raw);
+        return {
+          ...fallback,
+          ...parsed,
+          scores: { ...(parsed.scores || {}) },
+          notes: { ...(parsed.notes || {}) },
+          customCures: Array.isArray(parsed.customCures) ? parsed.customCures : [],
+          auditor: { ...fallback.auditor, ...(parsed.auditor || {}), clues: Array.isArray(parsed.auditor?.clues) ? parsed.auditor.clues : fallback.auditor.clues },
+          kua: { ...fallback.kua, ...(parsed.kua || {}) }
+        };
+      } catch (err) {
+        return fallback;
+      }
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      } catch (err) {
+        // Ignore storage quota errors
+      }
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function escapeJsSingle(value) {
+      return String(value ?? "").replace(/\\/g, "\\\\").replace(/'/g, "\\'");
+    }
+
+    function getScopedItems() {
+      return CHECKLIST_ITEMS.filter((item) => item.scopes.includes(state.scope));
+    }
+
+    function calculateKuaDetails() {
+      const cleanYear = String(state.kua.birthYear || "").trim();
+      if (!/^\d{4}$/.test(cleanYear)) {
+        return { valid: false, error: "Enter a 4-digit birth year (1900–2099) to calculate your Kua number." };
+      }
+      const rawYear = Number(cleanYear);
+      if (rawYear < 1900 || rawYear > 2099) {
+        return { valid: false, error: "Please enter a birth year between 1900 and 2099." };
+      }
+
+      const solarYear = state.kua.bornBeforeLiChun ? rawYear - 1 : rawYear;
+      if (solarYear < 1900 || solarYear > 2099) {
+        return { valid: false, error: "Adjusted solar year is outside the 1900–2099 range." };
+      }
+
+      const lastTwo = solarYear % 100;
+      const sumDigits = (n) => {
+        let cur = n;
+        while (cur > 9) {
+          cur = String(cur).split("").reduce((acc, d) => acc + Number(d), 0);
+        }
+        return cur;
+      };
+
+      const singleSum = sumDigits(lastTwo);
+      const is2000s = solarYear >= 2000;
+
+      let rawKua;
+      let formulaLabel;
+      if (state.kua.gender === "male") {
+        rawKua = is2000s ? sumDigits(9 - singleSum) : sumDigits(10 - singleSum);
+        formulaLabel = is2000s ? `2000s Male: 9 − ${singleSum} = ${rawKua}` : `1900s Male: 10 − ${singleSum} = ${rawKua}`;
+      } else {
+        rawKua = is2000s ? sumDigits(singleSum + 6) : sumDigits(singleSum + 5);
+        formulaLabel = is2000s ? `2000s Female: ${singleSum} + 6 → ${rawKua}` : `1900s Female: ${singleSum} + 5 → ${rawKua}`;
+      }
+
+      let finalKua = rawKua;
+      let substitutionNote = "No Kua 5 substitution required.";
+      if (rawKua === 5) {
+        if (state.kua.gender === "male") {
+          finalKua = 2;
+          substitutionNote = "Kua 5 for a Male maps to Kua 2 (Southwest Earth).";
+        } else {
+          finalKua = 8;
+          substitutionNote = "Kua 5 for a Female maps to Kua 8 (Northeast Earth).";
+        }
+      }
+
+      const profile = KUA_PROFILES[finalKua];
+      return {
+        valid: true,
+        rawYear,
+        solarYear,
+        lastTwo,
+        singleSum,
+        formulaLabel,
+        rawKua,
+        finalKua,
+        substitutionNote,
+        profile
+      };
+    }
+
+    function switchTab(tabName) {
+      state.activeTab = tabName;
+      saveState();
+      renderAll();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function setScope(scope) {
+      state.scope = scope;
+      saveState();
+      renderAll();
+    }
+
+    function setSpaceLabel(val) {
+      state.spaceLabel = val;
+      saveState();
+      updateProgressStrip();
+    }
+
+    function setPhaseFilter(phase) {
+      state.phaseFilter = phase;
+      saveState();
+      renderChecklist();
+    }
+
+    function setStatusFilter(status) {
+      state.statusFilter = status;
+      saveState();
+      renderChecklist();
+    }
+
+    function setItemScore(itemId, status) {
+      if (state.scores[itemId] === status) {
+        delete state.scores[itemId];
+      } else {
+        state.scores[itemId] = status;
+      }
+      saveState();
+      updateProgressStrip();
+      renderChecklist();
+      renderCures();
+    }
+
+    function setItemNote(itemId, text) {
+      state.notes[itemId] = text;
+      saveState();
+      renderCures();
+    }
+
+    function openGlossary(key) {
+      const entry = GLOSSARY[key];
+      if (!entry) return;
+      document.getElementById("glossary-title").textContent = entry.title;
+      document.getElementById("glossary-body").textContent = entry.body;
+      document.getElementById("glossary-modal").classList.remove("hidden");
+    }
+
+    function closeGlossary(event) {
+      if (event && event.target !== event.currentTarget) return;
+      document.getElementById("glossary-modal").classList.add("hidden");
+    }
+
+    function openClearModal() {
+      document.getElementById("clear-modal").classList.remove("hidden");
+    }
+
+    function closeClearModal(event) {
+      if (event && event.target !== event.currentTarget) return;
+      document.getElementById("clear-modal").classList.add("hidden");
+    }
+
+    function confirmClearAll() {
+      state = createDefaultState();
+      saveState();
+      document.getElementById("clear-modal").classList.add("hidden");
+      syncStaticInputs();
+      renderAll();
+    }
+
+    function handleKuaBirthYearInput(val) {
+      const digitsOnly = String(val || "").replace(/\D/g, "").slice(0, 4);
+      if (digitsOnly !== val) {
+        const inputEl = document.getElementById("kua-birth-year");
+        if (inputEl) inputEl.value = digitsOnly;
+      }
+      state.kua.birthYear = digitsOnly;
+      saveState();
+      renderKuaResultOnly();
+      renderChecklist();
+      renderBagua();
+    }
+
+    function setKuaGender(gender) {
+      state.kua.gender = gender;
+      saveState();
+      syncKuaGenderButtons();
+      renderKuaResultOnly();
+      renderChecklist();
+      renderBagua();
+    }
+
+    function setKuaBeforeLiChun(checked) {
+      state.kua.bornBeforeLiChun = Boolean(checked);
+      saveState();
+      renderKuaResultOnly();
+      renderChecklist();
+      renderBagua();
+    }
+
+    function toggleApplyKuaDirections() {
+      state.kuaApplied = !state.kuaApplied;
+      saveState();
+      renderKuaResultOnly();
+      renderChecklist();
+      renderBagua();
+      updateNavBadges();
+    }
+
+    function addKuaCureToPlan(code, dir, remedy) {
+      const calc = calculateKuaDetails();
+      if (!calc.valid) return;
+      const title = `Kua #${calc.finalKua} (${code} — ${dir})`;
+      const exists = state.customCures.some((c) => c.title === title && c.remedy === remedy);
+      if (!exists) {
+        state.customCures.push({
+          id: "kua-" + Date.now() + "-" + Math.random().toString(36).slice(2, 6),
+          title,
+          remedy
+        });
+        saveState();
+        renderCures();
+      }
+      switchTab("cures");
+    }
+
+    function removeCustomCure(id) {
+      state.customCures = state.customCures.filter((c) => c.id !== id);
+      saveState();
+      renderCures();
+    }
+
+    // Auditor handlers
+    function setAuditorStep(step) {
+      state.auditor.step = step;
+      saveState();
+      renderAuditor();
+    }
+
+    function setAuditorEntrance(val) {
+      state.auditor.entranceWall = val;
+      saveState();
+      renderAuditor();
+    }
+
+    function selectAuditorSector(sector) {
+      state.auditor.sector = sector;
+      saveState();
+      renderAuditor();
+    }
+
+    function selectAuditorRoomType(roomType) {
+      state.auditor.roomType = roomType;
+      saveState();
+      renderAuditor();
+    }
+
+    function toggleAuditorClue(clue) {
+      const idx = state.auditor.clues.indexOf(clue);
+      if (idx >= 0) {
+        state.auditor.clues.splice(idx, 1);
+      } else {
+        state.auditor.clues.push(clue);
+      }
+      saveState();
+      renderAuditor();
+    }
+
+    function setAuditorNote(val) {
+      state.auditor.note = val;
+      saveState();
+    }
+
+    function addAuditorCureToPlan() {
+      const a = state.auditor;
+      const title = `Bagua Audit: ${a.sector} (${a.roomType})`;
+      const clueText = a.clues.length ? `Observed: ${a.clues.join(", ")}. ` : "";
+      const noteText = a.note ? `Note: ${a.note}` : "Tune elemental balance and flow for this sector.";
+      state.customCures.push({
+        id: "auditor-" + Date.now(),
+        title,
+        remedy: `${clueText}${noteText}`
+      });
+      saveState();
+      renderCures();
+      switchTab("cures");
+    }
+
+    function selectBagua(id) {
+      state.selectedBaguaId = id;
+      saveState();
+      renderBaguaGridAndDetail();
+    }
+
+    function selectElement(elName) {
+      state.selectedElement = elName;
+      saveState();
+      renderElements();
+    }
+
+    function syncStaticInputs() {
+      const labelEl = document.getElementById("space-label-input");
+      if (labelEl) labelEl.value = state.spaceLabel || "";
+
+      const yearEl = document.getElementById("kua-birth-year");
+      if (yearEl) yearEl.value = state.kua.birthYear || "";
+
+      const liChunEl = document.getElementById("kua-born-before-lichun");
+      if (liChunEl) liChunEl.checked = Boolean(state.kua.bornBeforeLiChun);
+
+      syncKuaGenderButtons();
+    }
+
+    function syncKuaGenderButtons() {
+      const maleBtn = document.getElementById("kua-gender-male");
+      const femaleBtn = document.getElementById("kua-gender-female");
+      if (!maleBtn || !femaleBtn) return;
+
+      const activeCls = "rounded-xl px-3 py-2 text-sm font-medium border bg-[#8FB8A3] text-[#0E1512] border-[#8FB8A3] transition cursor-pointer";
+      const idleCls = "rounded-xl px-3 py-2 text-sm font-medium border bg-[var(--bg-elevated)] text-[var(--text-secondary)] border-[var(--border-subtle)] hover:text-white transition cursor-pointer";
+
+      maleBtn.className = state.kua.gender === "male" ? activeCls : idleCls;
+      femaleBtn.className = state.kua.gender === "female" ? activeCls : idleCls;
+    }
+
+    function updateProgressStrip() {
+      const scoped = getScopedItems();
+      const total = scoped.length;
+      let aligned = 0;
+      let needsCure = 0;
+
+      scoped.forEach((item) => {
+        const s = state.scores[item.id];
+        if (s === "aligned") aligned += 1;
+        if (s === "cure") needsCure += 1;
+      });
+
+      const scored = aligned + needsCure;
+      const pct = total > 0 ? Math.round((scored / total) * 100) : 0;
+
+      document.getElementById("progress-summary-text").textContent = `${scored} / ${total} Scored`;
+      document.getElementById("progress-bar-fill").style.width = `${pct}%`;
+      document.getElementById("aligned-count-text").textContent = `${aligned} Aligned`;
+      document.getElementById("cure-count-text").textContent = `${needsCure} Needs Cure`;
+    }
+
+    function updateNavBadges() {
+      const scoped = getScopedItems();
+      let scored = 0;
+      let cureItems = 0;
+      scoped.forEach((item) => {
+        const s = state.scores[item.id];
+        if (s === "aligned" || s === "cure") scored += 1;
+        if (s === "cure") cureItems += 1;
+      });
+
+      document.getElementById("nav-checklist-count").textContent = `${scored}/${scoped.length}`;
+      document.getElementById("nav-cures-count").textContent = `${cureItems + state.customCures.length}`;
+
+      const calc = calculateKuaDetails();
+      const kuaBadge = document.getElementById("nav-kua-badge");
+      if (calc.valid) {
+        kuaBadge.textContent = state.kuaApplied ? `Kua #${calc.finalKua} · Active` : `Kua #${calc.finalKua}`;
+      } else {
+        kuaBadge.textContent = "Ba Zhai";
+      }
+
+      const scopes = ["home", "business", "room"];
+      scopes.forEach((sc) => {
+        const btn = document.getElementById(`scope-${sc}`);
+        if (!btn) return;
+        if (state.scope === sc) {
+          btn.className = "rounded-xl px-3 py-2 text-xs sm:text-sm font-medium border bg-[#8FB8A3] text-[#0E1512] border-[#8FB8A3] transition cursor-pointer";
+        } else {
+          btn.className = "rounded-xl px-3 py-2 text-xs sm:text-sm font-medium border bg-[var(--bg-elevated)] text-[var(--text-secondary)] border-[var(--border-subtle)] hover:text-white transition cursor-pointer";
+        }
+      });
+
+      const tabs = ["checklist", "bagua", "kua", "cures"];
+      tabs.forEach((t) => {
+        const tabBtn = document.getElementById(`tab-${t}`);
+        const viewEl = document.getElementById(`view-${t}`);
+        if (tabBtn) {
+          if (state.activeTab === t) {
+            tabBtn.className = "flex items-center justify-between rounded-xl px-3.5 py-2.5 text-left text-sm font-semibold bg-[#8FB8A3] text-[#0E1512] shadow-xs transition cursor-pointer";
+          } else {
+            tabBtn.className = "flex items-center justify-between rounded-xl px-3.5 py-2.5 text-left text-sm font-medium bg-[var(--bg-elevated)] text-[var(--text-secondary)] hover:text-white border border-[var(--border-subtle)] transition cursor-pointer";
+          }
+        }
+        if (viewEl) {
+          if (state.activeTab === t) {
+            viewEl.classList.remove("hidden");
+          } else {
+            viewEl.classList.add("hidden");
+          }
+        }
+      });
+    }
+
+    function buildKuaOverlayHtml(item) {
+      if (!item.directionalType) return "";
+      const calc = calculateKuaDetails();
+
+      if (!state.kuaApplied || !calc.valid) {
+        return `
+          <div class="mt-3 rounded-xl border border-[#8FB8A3]/25 bg-[#121C18] p-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs">
+            <span class="text-[var(--text-secondary)]">
+              <strong class="text-[#CBE0D5]">Personal Compass Tie-Breaker:</strong> Calculate your Kua number and apply it across directional checkpoints.
+            </span>
+            <button
+              type="button"
+              onclick="switchTab('kua')"
+              class="shrink-0 font-semibold text-[#8FB8A3] hover:text-white underline cursor-pointer self-start sm:self-center"
+            >
+              Calculate your Kua Number →
+            </button>
+          </div>
+        `;
+      }
+
+      const p = calc.profile;
+      const topSupport = p.supportive.slice(0, 2).map((s) => `${s.dir} (${s.code})`).join(" or ");
+      const allSupport = p.supportive.map((s) => `${s.dir} — ${s.code}`).join(" · ");
+      const avoidDirs = p.challenging.map((c) => `${c.dir} (${c.code})`).join(", ");
+
+      let guidanceLine = "";
+      if (item.directionalType === "door") {
+        guidanceLine = `For Kua #${calc.finalKua} (${p.group}), favorable entrance bearings include ${allSupport}. Avoid over-relying on ${avoidDirs} if a layout option is available.`;
+      } else if (item.directionalType === "bed") {
+        guidanceLine = `For Kua #${calc.finalKua} (${p.group}), orienting the crown of your head toward ${topSupport} pairs nicely with solid wall backing and Command Position.`;
+      } else if (item.directionalType === "desk") {
+        guidanceLine = `For Kua #${calc.finalKua} (${p.group}), facing toward ${topSupport} supports focus once your desk is in Command Position.`;
+      } else {
+        guidanceLine = `For Kua #${calc.finalKua} (${p.group}), supportive directions are ${topSupport}, while keeping burner safety and Fire/Water balance first.`;
+      }
+
+      return `
+        <div class="mt-3 rounded-xl border border-[#8FB8A3]/45 bg-[#1A2B24] p-3 text-xs">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+            <span class="font-semibold text-[#A3D1BA]">🧭 Applied Kua #${calc.finalKua} (${p.group}) Guidance</span>
+            <button type="button" onclick="switchTab('kua')" class="text-[#8FB8A3] hover:text-white underline cursor-pointer">
+              Edit Kua →
+            </button>
+          </div>
+          <p class="text-[#E6EFEA] leading-relaxed">${escapeHtml(guidanceLine)}</p>
+        </div>
+      `;
+    }
+
+    function renderChecklist() {
+      const phaseBtnContainer = document.getElementById("phase-filter-buttons");
+      const phaseOptions = [
+        { id: "all", label: "All Phases" },
+        { id: 1, label: "Phase 1" },
+        { id: 2, label: "Phase 2" },
+        { id: 3, label: "Phase 3" },
+        { id: 4, label: "Phase 4" },
+        { id: 5, label: "Phase 5" }
+      ];
+
+      phaseBtnContainer.innerHTML = phaseOptions
+        .map((opt) => {
+          const active = String(state.phaseFilter) === String(opt.id);
+          const cls = active
+            ? "rounded-xl px-3 py-1.5 text-xs font-semibold bg-[#8FB8A3] text-[#0E1512] cursor-pointer"
+            : "rounded-xl px-3 py-1.5 text-xs font-medium bg-[var(--bg-elevated)] text-[var(--text-secondary)] hover:text-white border border-[var(--border-subtle)] cursor-pointer";
+          const arg = opt.id === "all" ? "'all'" : String(opt.id);
+          return `<button type="button" onclick="setPhaseFilter(${arg})" class="${cls}">${escapeHtml(opt.label)}</button>`;
+        })
+        .join("");
+
+      const statusIds = ["all", "unscored", "cure"];
+      statusIds.forEach((st) => {
+        const el = document.getElementById(`filter-${st}`);
+        if (!el) return;
+        const active = state.statusFilter === st;
+        el.className = active
+          ? "rounded-lg px-3 py-1.5 text-xs font-semibold bg-[#8FB8A3] text-[#0E1512] border border-[#8FB8A3] cursor-pointer"
+          : "rounded-lg px-3 py-1.5 text-xs font-medium bg-[var(--bg-elevated)] text-[var(--text-secondary)] hover:text-white border border-[var(--border-subtle)] cursor-pointer";
+      });
+
+      const scoped = getScopedItems().filter((item) => {
+        if (state.phaseFilter !== "all" && Number(state.phaseFilter) !== item.phase) return false;
+        const s = state.scores[item.id];
+        if (state.statusFilter === "unscored" && (s === "aligned" || s === "cure")) return false;
+        if (state.statusFilter === "cure" && s !== "cure") return false;
+        return true;
+      });
+
+      const container = document.getElementById("checklist-container");
+      if (!scoped.length) {
+        container.innerHTML = `
+          <div class="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-8 text-center text-sm text-[var(--text-secondary)]">
+            No checkpoints match the current phase/status filter for this scope.
+          </div>
+        `;
+        return;
+      }
+
+      const phasesPresent = [...new Set(scoped.map((i) => i.phase))];
+      container.innerHTML = phasesPresent
+        .map((phaseNum) => {
+          const meta = PHASE_META[phaseNum];
+          const itemsInPhase = scoped.filter((i) => i.phase === phaseNum);
+
+          const cardsHtml = itemsInPhase
+            .map((item) => {
+              const currentScore = state.scores[item.id] || "";
+              const noteVal = state.notes[item.id] || "";
+
+              const alignedCls =
+                currentScore === "aligned"
+                  ? "rounded-xl px-3.5 py-2 text-xs font-semibold bg-emerald-500 text-[#08130E] border border-emerald-400 cursor-pointer"
+                  : "rounded-xl px-3.5 py-2 text-xs font-medium bg-[var(--bg-elevated)] text-emerald-200 border border-emerald-400/25 hover:bg-emerald-950/50 cursor-pointer";
+
+              const cureCls =
+                currentScore === "cure"
+                  ? "rounded-xl px-3.5 py-2 text-xs font-semibold bg-amber-400 text-[#181205] border border-amber-300 cursor-pointer"
+                  : "rounded-xl px-3.5 py-2 text-xs font-medium bg-[var(--bg-elevated)] text-amber-200 border border-amber-400/25 hover:bg-amber-950/50 cursor-pointer";
+
+              const glossaryLink = item.glossaryKey
+                ? `<button type="button" onclick="openGlossary('${item.glossaryKey}')" class="glossary-term text-xs font-medium ml-1">Term info ⓘ</button>`
+                : "";
+
+              return `
+                <article class="print-card rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-4 sm:p-5">
+                  <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
+                    <div class="space-y-2 flex-1">
+                      <div class="flex flex-wrap items-center gap-2">
+                        <span class="text-xs font-semibold rounded-full px-2.5 py-0.5 bg-[#23372E] text-[#CBE0D5] border border-[#8FB8A3]/25">
+                          ${escapeHtml(item.tier)}
+                        </span>
+                        <h3 class="text-base font-semibold text-white">${escapeHtml(item.title)}</h3>
+                        ${glossaryLink}
+                      </div>
+
+                      <p class="text-sm text-[#E5ECE8]">${escapeHtml(item.prompt)}</p>
+
+                      <!-- Why It Matters & How Important It Is Guidance Block -->
+                      <div class="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/90 p-3 text-xs text-[var(--text-secondary)]">
+                        <div class="font-semibold text-[#CBE0D5] mb-1">Why It Matters &amp; How Important It Is</div>
+                        <p class="leading-relaxed">${escapeHtml(item.whyItMatters)}</p>
+                      </div>
+
+                      ${buildKuaOverlayHtml(item)}
+
+                      <div class="pt-1">
+                        <label for="note-${escapeHtml(item.id)}" class="block text-xs text-[var(--text-secondary)] mb-1">
+                          Walkthrough Notes &amp; Suggested Cure (${escapeHtml(item.cure)})
+                        </label>
+                        <input
+                          id="note-${escapeHtml(item.id)}"
+                          type="text"
+                          value="${escapeHtml(noteVal)}"
+                          placeholder="Add room notes or cure specifics..."
+                          oninput="setItemNote('${escapeJsSingle(item.id)}', this.value)"
+                          class="w-full rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)] px-3 py-2 text-xs sm:text-sm text-white placeholder:text-[#7D9086] focus:outline-none focus:border-[#8FB8A3]"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="no-print flex sm:flex-row lg:flex-col gap-2 shrink-0">
+                      <button type="button" onclick="setItemScore('${escapeJsSingle(item.id)}', 'aligned')" class="${alignedCls}">
+                        ✓ Aligned
+                      </button>
+                      <button type="button" onclick="setItemScore('${escapeJsSingle(item.id)}', 'cure')" class="${cureCls}">
+                        ⚠ Needs Cure
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              `;
+            })
+            .join("");
+
+          return `
+            <div class="space-y-3">
+              <div class="px-1">
+                <h2 class="text-lg font-semibold text-white">${escapeHtml(meta.title)}</h2>
+                <p class="text-xs sm:text-sm text-[var(--text-secondary)]">${escapeHtml(meta.subtitle)}</p>
+              </div>
+              <div class="space-y-3">${cardsHtml}</div>
+            </div>
+          `;
+        })
+        .join("");
+    }
+
+    function renderAuditor() {
+      const a = state.auditor;
+      const step = a.step || 1;
+      const container = document.getElementById("auditor-container");
+
+      const stepsBar = `
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-5">
+          ${[1, 2, 3, 4]
+            .map((n) => {
+              const titles = { 1: "1. Entrance Wall", 2: "2. Bagua Sector", 3: "3. Room Clues", 4: "4. Summary" };
+              const active = step === n;
+              return `
+                <button
+                  type="button"
+                  onclick="setAuditorStep(${n})"
+                  class="rounded-xl px-3 py-2 text-xs font-semibold border text-left transition cursor-pointer ${
+                    active
+                      ? "bg-[#8FB8A3] text-[#0E1512] border-[#8FB8A3]"
+                      : "bg-[var(--bg-elevated)] text-[var(--text-secondary)] border-[var(--border-subtle)] hover:text-white"
+                  }"
+                >
+                  ${titles[n]}
+                </button>
+              `;
+            })
+            .join("")}
+        </div>
+      `;
+
+      let bodyHtml = "";
+      if (step === 1) {
+        bodyHtml = `
+          <div class="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)] p-4 space-y-3">
+            <div class="text-sm font-semibold text-white">Anchor Your Main Entrance Wall</div>
+            <p class="text-xs text-[var(--text-secondary)]">In classical/BTB Bagua mapping, place the bottom row of the grid along the wall containing your main entrance door.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              ${["Bottom (South / Front)", "Top (North / Rear)", "Left (East)", "Right (West)"]
+                .map((wall) => {
+                  const sel = a.entranceWall === wall;
+                  return `
+                    <button
+                      type="button"
+                      onclick="setAuditorEntrance('${escapeJsSingle(wall)}')"
+                      class="rounded-xl px-3.5 py-2.5 text-xs sm:text-sm font-medium border text-left cursor-pointer ${
+                        sel
+                          ? "bg-[#23372E] text-white border-[#8FB8A3]"
+                          : "bg-[#141D19] text-[var(--text-secondary)] border-[var(--border-subtle)] hover:text-white"
+                      }"
+                    >
+                      ${escapeHtml(wall)}
+                    </button>
+                  `;
+                })
+                .join("")}
+            </div>
+            <div class="pt-2 flex justify-end">
+              <button type="button" onclick="setAuditorStep(2)" class="rounded-xl bg-[#8FB8A3] text-[#0E1512] font-semibold px-4 py-2 text-xs sm:text-sm cursor-pointer">
+                Next: Pick Sector →
+              </button>
+            </div>
+          </div>
+        `;
+      } else if (step === 2) {
+        bodyHtml = `
+          <div class="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)] p-4 space-y-3">
+            <div class="text-sm font-semibold text-white">Choose Bagua Sector &amp; Primary Room Function</div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+              ${AUDITOR_SECTORS.map((sec) => {
+                const sel = a.sector === sec;
+                return `
+                  <button
+                    type="button"
+                    onclick="selectAuditorSector('${escapeJsSingle(sec)}')"
+                    class="rounded-xl px-3 py-2 text-xs font-medium border text-left cursor-pointer ${
+                      sel
+                        ? "bg-[#8FB8A3] text-[#0E1512] font-semibold border-[#8FB8A3]"
+                        : "bg-[#141D19] text-[var(--text-secondary)] border-[var(--border-subtle)] hover:text-white"
+                    }"
+                  >
+                    ${escapeHtml(sec)}
+                  </button>
+                `;
+              }).join("")}
+            </div>
+
+            <div class="pt-2">
+              <div class="text-xs font-semibold uppercase tracking-wider text-[var(--text-secondary)] mb-2">Room / Zone Type</div>
+              <div class="flex flex-wrap gap-2">
+                ${AUDITOR_ROOM_TYPES.map((rt) => {
+                  const sel = a.roomType === rt;
+                  return `
+                    <button
+                      type="button"
+                      onclick="selectAuditorRoomType('${escapeJsSingle(rt)}')"
+                      class="rounded-xl px-3 py-1.5 text-xs font-medium border cursor-pointer ${
+                        sel
+                          ? "bg-[#23372E] text-white border-[#8FB8A3]"
+                          : "bg-[#141D19] text-[var(--text-secondary)] border-[var(--border-subtle)]"
+                      }"
+                    >
+                      ${escapeHtml(rt)}
+                    </button>
+                  `;
+                }).join("")}
+              </div>
+            </div>
+
+            <div class="pt-2 flex justify-between">
+              <button type="button" onclick="setAuditorStep(1)" class="rounded-xl border border-[var(--border-subtle)] px-3.5 py-2 text-xs text-[var(--text-secondary)] cursor-pointer">
+                ← Back
+              </button>
+              <button type="button" onclick="setAuditorStep(3)" class="rounded-xl bg-[#8FB8A3] text-[#0E1512] font-semibold px-4 py-2 text-xs sm:text-sm cursor-pointer">
+                Next: Room Clues →
+              </button>
+            </div>
+          </div>
+        `;
+      } else if (step === 3) {
+        bodyHtml = `
+          <div class="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)] p-4 space-y-3">
+            <div class="text-sm font-semibold text-white">Select Observed Conditions in ${escapeHtml(a.sector)}</div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+              ${AUDITOR_CLUES.map((cl) => {
+                const active = a.clues.includes(cl);
+                return `
+                  <button
+                    type="button"
+                    onclick="toggleAuditorClue('${escapeJsSingle(cl)}')"
+                    class="rounded-xl px-3 py-2 text-xs font-medium border text-left cursor-pointer ${
+                      active
+                        ? "bg-[#23372E] text-white border-[#8FB8A3]"
+                        : "bg-[#141D19] text-[var(--text-secondary)] border-[var(--border-subtle)] hover:text-white"
+                    }"
+                  >
+                    ${active ? "✓ " : ""}${escapeHtml(cl)}
+                  </button>
+                `;
+              }).join("")}
+            </div>
+
+            <div>
+              <label for="auditor-note-input" class="block text-xs text-[var(--text-secondary)] mb-1">Optional Notes</label>
+              <input
+                id="auditor-note-input"
+                type="text"
+                value="${escapeHtml(a.note || "")}"
+                placeholder="e.g., Tall bookshelf partially blocking window..."
+                oninput="setAuditorNote(this.value)"
+                class="w-full rounded-xl border border-[var(--border-subtle)] bg-[#141D19] px-3 py-2 text-xs sm:text-sm text-white"
+              />
+            </div>
+
+            <div class="pt-2 flex justify-between">
+              <button type="button" onclick="setAuditorStep(2)" class="rounded-xl border border-[var(--border-subtle)] px-3.5 py-2 text-xs text-[var(--text-secondary)] cursor-pointer">
+                ← Back
+              </button>
+              <button type="button" onclick="setAuditorStep(4)" class="rounded-xl bg-[#8FB8A3] text-[#0E1512] font-semibold px-4 py-2 text-xs sm:text-sm cursor-pointer">
+                View Summary →
+              </button>
+            </div>
+          </div>
+        `;
+      } else {
+        bodyHtml = `
+          <div class="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)] p-4 space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="text-sm font-semibold text-white">Sector Audit Snapshot</div>
+              <button type="button" onclick="setAuditorStep(1)" class="text-xs text-[#8FB8A3] underline cursor-pointer">Edit Steps</button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+              <div class="rounded-xl bg-[#141D19] p-3 border border-[var(--border-subtle)]">
+                <div class="text-[var(--text-secondary)]">Entrance Reference</div>
+                <div class="text-white font-semibold mt-0.5">${escapeHtml(a.entranceWall)}</div>
+              </div>
+              <div class="rounded-xl bg-[#141D19] p-3 border border-[var(--border-subtle)]">
+                <div class="text-[var(--text-secondary)]">Target Sector &amp; Room</div>
+                <div class="text-white font-semibold mt-0.5">${escapeHtml(a.sector)} · ${escapeHtml(a.roomType)}</div>
+              </div>
+              <div class="rounded-xl bg-[#141D19] p-3 border border-[var(--border-subtle)]">
+                <div class="text-[var(--text-secondary)]">Observed Clues</div>
+                <div class="text-white font-semibold mt-0.5">${escapeHtml(a.clues.join(", ") || "None selected")}</div>
+              </div>
+            </div>
+            ${a.note ? `<p class="text-xs text-[var(--text-secondary)]"><strong class="text-white">Note:</strong> ${escapeHtml(a.note)}</p>` : ""}
+            <div class="pt-2 flex justify-end">
+              <button
+                type="button"
+                onclick="addAuditorCureToPlan()"
+                class="rounded-xl bg-[#8FB8A3] hover:bg-[#A3C7B5] text-[#0E1512] font-semibold px-4 py-2 text-xs sm:text-sm cursor-pointer"
+              >
+                + Add Sector Audit to Action Plan
+              </button>
+            </div>
+          </div>
+        `;
+      }
+
+      container.innerHTML = stepsBar + bodyHtml;
+    }
+
+    function renderBaguaGridAndDetail() {
+      const calc = calculateKuaDetails();
+      const bannerEl = document.getElementById("bagua-kua-banner");
+
+      if (state.kuaApplied && calc.valid) {
+        const supList = calc.profile.supportive.map((s) => `${s.dir} (${s.code})`).join(" · ");
+        bannerEl.innerHTML = `
+          <div class="rounded-xl border border-[#8FB8A3]/40 bg-[#1B2722] px-3.5 py-2 text-xs text-[#E5ECE8]">
+            <strong class="text-[#A3D1BA]">Kua #${calc.finalKua} (${calc.profile.group}):</strong> Supportive directions: ${escapeHtml(supList)}
+          </div>
+        `;
+      } else {
+        bannerEl.innerHTML = `
+          <button type="button" onclick="switchTab('kua')" class="text-xs font-semibold text-[#8FB8A3] hover:text-white underline cursor-pointer">
+            Calculate &amp; Apply Personal Kua Directions →
+          </button>
+        `;
+      }
+
+      const gridEl = document.getElementById("bagua-grid");
+      gridEl.innerHTML = BAGUA_SECTORS.map((sec) => {
+        const isSel = state.selectedBaguaId === sec.id;
+        let kuaTag = "";
+        if (state.kuaApplied && calc.valid) {
+          const isSup = calc.profile.supportive.some((s) => s.dir.toLowerCase() === sec.compass.toLowerCase());
+          const isCha = calc.profile.challenging.some((c) => c.dir.toLowerCase() === sec.compass.toLowerCase());
+          if (isSup) {
+            kuaTag = `<span class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-200 border border-emerald-400/30">Kua Supportive</span>`;
+          } else if (isCha) {
+            kuaTag = `<span class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-200 border border-amber-400/30">Kua Watch</span>`;
+          }
+        }
+
+        return `
+          <button
+            type="button"
+            onclick="selectBagua('${escapeJsSingle(sec.id)}')"
+            class="rounded-2xl p-4 text-left border transition cursor-pointer ${
+              isSel
+                ? "bg-[#23372E] border-[#8FB8A3] shadow-md"
+                : "bg-[var(--bg-elevated)] border-[var(--border-subtle)] hover:border-[#8FB8A3]/50"
+            }"
+          >
+            <div class="flex items-center justify-between gap-2">
+              <span class="text-xs font-semibold uppercase tracking-wider text-[#8FB8A3]">${escapeHtml(sec.compass)} · ${escapeHtml(sec.element)}</span>
+              ${kuaTag}
+            </div>
+            <div class="text-sm font-semibold text-white mt-1">${escapeHtml(sec.name)}</div>
+            <div class="text-xs text-[var(--text-secondary)] mt-1">${escapeHtml(sec.theme)}</div>
+          </button>
+        `;
+      }).join("");
+
+      const activeSec = BAGUA_SECTORS.find((s) => s.id === state.selectedBaguaId) || BAGUA_SECTORS[0];
+      document.getElementById("bagua-detail-panel").innerHTML = `
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+          <div>
+            <div class="text-xs font-semibold uppercase tracking-wider text-[#8FB8A3]">${escapeHtml(activeSec.compass)} Sector · Element: ${escapeHtml(activeSec.element)}</div>
+            <h3 class="text-base font-semibold text-white">${escapeHtml(activeSec.name)}</h3>
+          </div>
+          <span class="text-xs text-[var(--text-secondary)]">Cues: ${escapeHtml(activeSec.color)}</span>
+        </div>
+        <p class="text-xs sm:text-sm text-[var(--text-secondary)] mt-2"><strong class="text-white">Practical Adjustment:</strong> ${escapeHtml(activeSec.cure)}</p>
+      `;
+    }
+
+    function renderElements() {
+      const names = Object.keys(FIVE_ELEMENTS);
+      document.getElementById("elements-selector").innerHTML = names
+        .map((elKey) => {
+          const item = FIVE_ELEMENTS[elKey];
+          const active = state.selectedElement === elKey;
+          return `
+            <button
+              type="button"
+              onclick="selectElement('${escapeJsSingle(elKey)}')"
+              class="rounded-xl px-3.5 py-2.5 text-sm font-semibold border flex items-center justify-between transition cursor-pointer ${
+                active
+                  ? "bg-[#8FB8A3] text-[#0E1512] border-[#8FB8A3]"
+                  : "bg-[var(--bg-elevated)] text-[var(--text-secondary)] border-[var(--border-subtle)] hover:text-white"
+              }"
+            >
+              <span>${item.icon} ${escapeHtml(item.element)}</span>
+            </button>
+          `;
+        })
+        .join("");
+
+      const cur = FIVE_ELEMENTS[state.selectedElement] || FIVE_ELEMENTS.Wood;
+      document.getElementById("elements-detail").innerHTML = `
+        <div class="text-base font-semibold text-white">${cur.icon} ${escapeHtml(cur.element)} Element</div>
+        <p class="text-xs sm:text-sm text-[var(--text-secondary)] mt-1">${escapeHtml(cur.summary)}</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3 text-xs">
+          <div class="rounded-xl bg-[#141D19] p-3 border border-[var(--border-subtle)]">
+            <div class="font-semibold text-emerald-300">Productive (Nourishing) Cycle</div>
+            <p class="text-[var(--text-secondary)] mt-1">
+              Nourished by <strong class="text-white">${escapeHtml(cur.producedBy)}</strong> · Nourishes <strong class="text-white">${escapeHtml(cur.produces)}</strong>
+            </p>
+          </div>
+          <div class="rounded-xl bg-[#141D19] p-3 border border-[var(--border-subtle)]">
+            <div class="font-semibold text-amber-300">Controlling (Balancing) Cycle</div>
+            <p class="text-[var(--text-secondary)] mt-1">
+              Balanced by <strong class="text-white">${escapeHtml(cur.controlledBy)}</strong> · Balances <strong class="text-white">${escapeHtml(cur.controls)}</strong>
+            </p>
+          </div>
+        </div>
+        <p class="text-xs text-[var(--text-secondary)] mt-3"><strong class="text-white">Visual &amp; Material Cues:</strong> ${escapeHtml(cur.cues)}</p>
+      `;
+    }
+
+    function renderBagua() {
+      renderAuditor();
+      renderBaguaGridAndDetail();
+      renderElements();
+    }
+
+    function renderKuaResultOnly() {
+      const container = document.getElementById("kuaResultContainer");
+      if (!container) return;
+
+      const calc = calculateKuaDetails();
+      if (!calc.valid) {
+        container.innerHTML = `
+          <div class="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-6 text-sm text-[var(--text-secondary)]">
+            ${escapeHtml(calc.error)}
+          </div>
+        `;
+        return;
+      }
+
+      const p = calc.profile;
+      const appliedBtnCls = state.kuaApplied
+        ? "rounded-xl px-4 py-2.5 text-xs sm:text-sm font-semibold bg-emerald-400 text-[#07140E] border border-emerald-300 transition cursor-pointer"
+        : "rounded-xl px-4 py-2.5 text-xs sm:text-sm font-semibold bg-[#8FB8A3] hover:bg-[#A3C7B5] text-[#0E1512] border border-[#8FB8A3] transition cursor-pointer";
+
+      const appliedBanner = state.kuaApplied
+        ? `
+          <div class="mt-4 rounded-xl border border-emerald-400/35 bg-emerald-950/40 px-4 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs sm:text-sm">
+            <span class="text-emerald-200 font-medium">
+              ✓ Kua #${calc.finalKua} directions are actively overlaid on directional checkpoints and the Bagua map.
+            </span>
+            <button type="button" onclick="switchTab('checklist')" class="text-emerald-300 hover:text-white underline font-semibold cursor-pointer self-start sm:self-center">
+              Jump to Walkthrough →
+            </button>
+          </div>
+        `
+        : "";
+
+      const supportiveHtml = p.supportive
+        .map(
+          (s) => `
+          <div class="rounded-xl border border-emerald-400/25 bg-[var(--bg-elevated)] p-3.5 flex flex-col justify-between gap-2.5">
+            <div>
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-sm font-semibold text-white">${escapeHtml(s.dir)}</span>
+                <span class="text-xs font-semibold rounded-full px-2.5 py-0.5 bg-emerald-500/20 text-emerald-200">${escapeHtml(s.code)}</span>
+              </div>
+              <p class="text-xs text-[#CBE0D5] mt-1 font-medium">${escapeHtml(s.meaning)}</p>
+              <p class="text-xs text-[var(--text-secondary)] mt-1 leading-relaxed">${escapeHtml(s.remedy)}</p>
+            </div>
+            <button
+              type="button"
+              onclick="addKuaCureToPlan('${escapeJsSingle(s.code)}', '${escapeJsSingle(s.dir)}', '${escapeJsSingle(s.remedy)}')"
+              class="self-start text-xs font-semibold text-[#8FB8A3] hover:text-white underline cursor-pointer"
+            >
+              + Add to Action Plan
+            </button>
+          </div>
+        `
+        )
+        .join("");
+
+      const challengingHtml = p.challenging
+        .map(
+          (c) => `
+          <div class="rounded-xl border border-amber-400/25 bg-[var(--bg-elevated)] p-3.5 flex flex-col justify-between gap-2.5">
+            <div>
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-sm font-semibold text-white">${escapeHtml(c.dir)}</span>
+                <span class="text-xs font-semibold rounded-full px-2.5 py-0.5 bg-amber-500/20 text-amber-200">${escapeHtml(c.code)}</span>
+              </div>
+              <p class="text-xs text-amber-200 mt-1 font-medium">${escapeHtml(c.meaning)}</p>
+              <p class="text-xs text-[var(--text-secondary)] mt-1 leading-relaxed">${escapeHtml(c.remedy)}</p>
+            </div>
+            <button
+              type="button"
+              onclick="addKuaCureToPlan('${escapeJsSingle(c.code)}', '${escapeJsSingle(c.dir)}', '${escapeJsSingle(c.remedy)}')"
+              class="self-start text-xs font-semibold text-amber-300 hover:text-white underline cursor-pointer"
+            >
+              + Add Remedy to Plan
+            </button>
+          </div>
+        `
+        )
+        .join("");
+
+      container.innerHTML = `
+        <div class="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-5">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <div class="text-xs font-semibold uppercase tracking-wider text-[#8FB8A3]">Personal Kua Result</div>
+              <div class="flex flex-wrap items-baseline gap-3 mt-1">
+                <span class="text-3xl font-bold text-white">Kua #${calc.finalKua}</span>
+                <span class="text-sm font-semibold rounded-full px-3 py-0.5 bg-[#23372E] text-[#CBE0D5] border border-[#8FB8A3]/30">
+                  ${escapeHtml(p.group)} · ${escapeHtml(p.element)}
+                </span>
+              </div>
+            </div>
+
+            <button type="button" onclick="toggleApplyKuaDirections()" class="${appliedBtnCls}">
+              ${state.kuaApplied ? "✓ Applied Across Assessment" : "🧭 Apply Kua Directions Across Assessment"}
+            </button>
+          </div>
+
+          ${appliedBanner}
+
+          <!-- Step-by-Step Math Verification -->
+          <div class="mt-4 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)] p-3.5 text-xs text-[var(--text-secondary)] space-y-1">
+            <div class="font-semibold text-white">Step-by-Step Math Verification</div>
+            <div>Birth Year: <strong class="text-white">${calc.rawYear}</strong> → Solar Year Used: <strong class="text-white">${calc.solarYear}</strong>${state.kua.bornBeforeLiChun ? " (adjusted −1 for pre-Li Chun birth)" : ""}</div>
+            <div>Last Two Digits: <strong class="text-white">${String(calc.lastTwo).padStart(2, "0")}</strong> → Single-Digit Sum: <strong class="text-white">${calc.singleSum}</strong></div>
+            <div>Formula: <strong class="text-white">${escapeHtml(calc.formulaLabel)}</strong></div>
+            <div>Kua 5 Rule Check: <span class="text-[#CBE0D5]">${escapeHtml(calc.substitutionNote)}</span></div>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-5 space-y-3">
+          <h3 class="text-base font-semibold text-emerald-300">4 Supportive Directions (${escapeHtml(p.group)})</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">${supportiveHtml}</div>
+        </div>
+
+        <div class="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-5 space-y-3">
+          <h3 class="text-base font-semibold text-amber-300">4 Challenging Directions — Meanings &amp; Remedies</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">${challengingHtml}</div>
+        </div>
+      `;
+    }
+
+    function renderCures() {
+      const container = document.getElementById("cures-container");
+      const flaggedItems = getScopedItems().filter((item) => state.scores[item.id] === "cure");
+      const customItems = state.customCures || [];
+
+      if (!flaggedItems.length && !customItems.length) {
+        container.innerHTML = `
+          <div class="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-8 text-center">
+            <div class="text-base font-semibold text-white">No Priority Cures Logged Yet</div>
+            <p class="text-sm text-[var(--text-secondary)] mt-1">
+              Mark checkpoints as <strong class="text-amber-300">⚠ Needs Cure</strong> in the Walkthrough Checklist or add Kua/Bagua adjustments to build your action plan.
+            </p>
+          </div>
+        `;
+        return;
+      }
+
+      const checklistCuresHtml = flaggedItems
+        .map((item) => {
+          const userNote = state.notes[item.id];
+          return `
+            <div class="print-card rounded-2xl border border-amber-400/25 bg-[var(--bg-surface)] p-4 sm:p-5">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span class="text-xs font-semibold rounded-full px-2.5 py-0.5 bg-amber-500/20 text-amber-200">
+                  Phase ${item.phase} · ${escapeHtml(item.tier)}
+                </span>
+                <span class="text-xs text-[var(--text-secondary)]">Checklist Flag</span>
+              </div>
+              <h3 class="text-base font-semibold text-white mt-2">${escapeHtml(item.title)}</h3>
+              <p class="text-xs sm:text-sm text-[var(--text-secondary)] mt-1"><strong class="text-[#CBE0D5]">Recommended Cure:</strong> ${escapeHtml(item.cure)}</p>
+              ${userNote ? `<p class="text-xs sm:text-sm text-white mt-1.5"><strong class="text-[#8FB8A3]">Your Note:</strong> ${escapeHtml(userNote)}</p>` : ""}
+            </div>
+          `;
+        })
+        .join("");
+
+      const customCuresHtml = customItems
+        .map(
+          (c) => `
+          <div class="print-card rounded-2xl border border-[#8FB8A3]/30 bg-[var(--bg-surface)] p-4 sm:p-5 flex items-start justify-between gap-4">
+            <div>
+              <span class="text-xs font-semibold rounded-full px-2.5 py-0.5 bg-[#23372E] text-[#CBE0D5]">Added Adjustment</span>
+              <h3 class="text-base font-semibold text-white mt-2">${escapeHtml(c.title)}</h3>
+              <p class="text-xs sm:text-sm text-[var(--text-secondary)] mt-1">${escapeHtml(c.remedy)}</p>
+            </div>
+            <button
+              type="button"
+              onclick="removeCustomCure('${escapeJsSingle(c.id)}')"
+              class="no-print text-xs text-rose-300 hover:text-rose-200 underline cursor-pointer shrink-0"
+            >
+              Remove
+            </button>
+          </div>
+        `
+        )
+        .join("");
+
+      container.innerHTML = checklistCuresHtml + customCuresHtml;
+    }
+
+    function buildPlainTextSummary() {
+      const lines = [];
+      const spaceName = state.spaceLabel.trim() || "Untitled Space";
+      lines.push(`SpaceShift Feng Shui Action Plan — ${spaceName} (${state.scope.toUpperCase()})`);
+      lines.push("------------------------------------------------------------");
+
+      const flagged = getScopedItems().filter((i) => state.scores[i.id] === "cure");
+      flagged.forEach((item, idx) => {
+        const note = state.notes[item.id] ? ` | Note: ${state.notes[item.id]}` : "";
+        lines.push(`${idx + 1}. [Phase ${item.phase}] ${item.title}: ${item.cure}${note}`);
+      });
+
+      (state.customCures || []).forEach((c, idx) => {
+        lines.push(`+ ${idx + 1}. ${c.title}: ${c.remedy}`);
+      });
+
+      return lines.join("\n");
+    }
+
+    function copyActionPlan() {
+      const text = buildPlainTextSummary();
+      const feedbackEl = document.getElementById("copy-feedback");
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard
+          .writeText(text)
+          .then(() => {
+            feedbackEl.textContent = "Action plan copied to clipboard.";
+            feedbackEl.classList.remove("hidden");
+          })
+          .catch(() => {
+            feedbackEl.textContent = "Unable to copy automatically—use Print / Save PDF or select text.";
+            feedbackEl.classList.remove("hidden");
+          });
+      }
+    }
+
+    function renderAll() {
+      updateProgressStrip();
+      updateNavBadges();
+      renderChecklist();
+      renderBagua();
+      renderKuaResultOnly();
+      renderCures();
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      syncStaticInputs();
+      renderAll();
+    });
+  </script>
+</body>
+</html>
